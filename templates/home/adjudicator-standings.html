@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Adjudicator Standings{% endblock %}
+
+{% block body %}
+    <h1><center>This is the Adjudicator Standings Page</center></h1>
+
+    <ul>
+        {% for adjudicator in all_adjudicators %}
+        <li><h2>{{ adjudicator.adjudicator_name }} : {{ adjudicator.score }}</h2></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tournaments</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}"/>
+</head>
+<body>
+     <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+
+                <li class="active">
+                    <a href="{% url 'home:add-tournament' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Tournament
+                    </a>
+                </li>
+
+                <li>
+                 	   <form class="navbar-form navbar-left" action="{% url 'home:logout' %}" method="post">
+                    	    {% csrf_token %}
+                        	<button type="submit">
+                            	Logout
+                        	</button>
+                    	</form>
+                	</li>
+
+            </ul>
+
+        </div>
+     </nav>
+
+    <ul>
+        {% for tournament in all_tournaments %}
+        <li><h2><a href="{% url 'home:detail' tournament.id %}">{{ tournament.tournament_name }}</a></h2></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

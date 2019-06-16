@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Tournament Details{% endblock %}
+
+{% block body %}
+    <h1>{{ tournament.tournament_name }}</h1>
+    <h1>Dates:{{ tournament.dates }}</h1>
+    <h1>Speaker Score Range:{{ tournament.speaker_score_range }}</h1>
+    <h1>Adjudicator Score Range:{{ tournament.adjudicator_score_range }}</h1>
+    <h1>Number of Rounds:{{ tournament.number_of_rounds }}</h1>
+    <h1>Number of Break Rounds:{{ tournament.number_of_break_rounds }}</h1>
+    <h1>Venue:{{ tournament.tournament_venue }}</h1>
+{% endblock %}

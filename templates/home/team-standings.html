@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Team Standings{% endblock %}
+
+{% block body %}
+    <h1><center>This is the Team Standings Page</center></h1>
+
+    <ul>
+        {% for team in all_teams %}
+        <li><h2>{{ team.team_name }} : {{ team.score }}</h2></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
